@@ -94,7 +94,7 @@ RSpec.describe "#my_map" do
   describe "it should mimic the behavior of #map method" do
     example "test 1" do
       x = [1, 2, 3]
-      expect(x.my_map {|x| x = 1}).to eql(x.map {|x| x = 1})
+      expect(x.my_map {|x| x + 1}).to eql(x.map {|x| x + 1})
     end
   end
 end
