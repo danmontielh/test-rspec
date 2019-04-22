@@ -1,6 +1,6 @@
 require './board.rb'
 
-RSpec.describe Board do
+describe Board do
   let(:board) {Board.new}
   describe "Testing methods for full board" do
     it "empty board" do

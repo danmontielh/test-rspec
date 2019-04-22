@@ -1,6 +1,6 @@
 require './player.rb'
 
-RSpec.describe Player do
+describe Player do
     let (:player) { Player.new('X')}
 
     describe "check if input is valid" do
