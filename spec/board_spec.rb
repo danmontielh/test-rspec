@@ -1,17 +1,16 @@
 require './board.rb'
 
 RSpec.describe Board do
+  let(:board) {Board.new}
   describe "Testing methods for full board" do
-    example "empty board" do
-      board = Board.new
+    it "empty board" do
       expect( board.full?  ).to eql( false )
     end
-    example "full board" do
-      n_board = Board.new
+    it "full board" do
       for i in 1..9 do
-        n_board.write(i, "X")
+        board.write(i, "X")
       end
-      expect(n_board.full?).to eql( true )
+      expect(board.full?).to eql( true )
     end
   end 
 end
