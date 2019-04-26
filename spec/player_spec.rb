@@ -1,31 +1,33 @@
 require './player.rb'
 
 describe Player do
-    let (:player) { Player.new('X')}
+    let(:player) { Player.new('X')}
 
-    describe "check if input is valid" do
-        it "input is valid" do
-            expect(player.valid?(1)).to eql(true) 
-        end
-        it "input is false" do
-            expect(player.valid?(11)).to eql(false) 
-        end
-        it "input is repeated" do
-            player.save(1)
-            expect(player.valid?(1)).to eql(false) 
-        end
-    end
-    describe "check if victory is achived" do
-        it "check method victory?" do
+    describe "save method" do
+        it "saves the input to an array named inputs" do
             player.save(9)
             player.save(6)
             player.save(3)
-            expect(player.victory?).to eql(true)
+            expect(player.inputs).to eql([9,6,3])
         end
-        it "check method victory? is false" do
+    end
+    
+    describe "reset_inputs method" do
+        it "checks if the input array is empty after a reset" do
+            player.save(9)
             player.save(6)
             player.save(3)
-            expect(player.victory?).to eql(false)
+            player.reset_inputs
+            expect(player.inputs).to eql([])
+        end
+    end
+
+    describe "score_up method" do
+        it "updates the player score after a win" do
+            player.score_up
+            expect(player.score).to eql(1)
+            player.score_up
+            expect(player.score).to eql(2)
         end
     end
 end
