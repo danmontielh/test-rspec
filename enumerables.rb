@@ -69,12 +69,12 @@ module Enumerable
 end
 
 
-# #testing as assigned
-# def multiply_els (arr)
-#   arr.my_inject {|product, x| product * x }
-# end
-# puts multiply_els([2,4,5])
-#
-# puts [1,2,3,4,5].my_inject {|a,b| a+b}
-# puts [1,2,3,4,5].my_inject {|a,b| a*b}
-# puts [1,2,3,4,5].my_inject {|a,b| a-b}
+#testing as assigned
+def multiply_els (arr)
+  arr.my_inject {|product, x| product * x }
+end
+puts multiply_els([2,4,5])
+
+puts [1,2,3,4,5].my_inject {|a,b| a+b}
+puts [1,2,3,4,5].my_inject {|a,b| a*b}
+puts [1,2,3,4,5].my_inject {|a,b| a-b}
